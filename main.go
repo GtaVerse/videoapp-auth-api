@@ -10,7 +10,6 @@ import (
 
 	"github.com/gorilla/mux"
 	_ "github.com/lib/pq"
-	"github.com/joho/godotenv"
 	"golang.org/x/crypto/bcrypt"
 )
 
