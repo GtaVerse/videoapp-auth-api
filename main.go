@@ -89,10 +89,7 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 func verify(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	response := map[string]int{"result": 1}
-	err := db.Ping()
-	if err != nil {
-		response["result"] = 0
-	}
+	response := map[string]int{"result": 255}
+
 	json.NewEncoder(w).Encode(response)
 }
