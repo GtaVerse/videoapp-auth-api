@@ -62,7 +62,6 @@ func main() {
 
 	router := mux.NewRouter()
 	router.HandleFunc("/auth", login).Methods("POST")
-	router.HandleFunc("/verify", verify).Methods("GET")
 
 	log.Fatal(http.ListenAndServe(":8000", router))
 }
@@ -94,12 +93,4 @@ func login(w http.ResponseWriter, r *http.Request) {
 
 	w.Header().Set("Content-Type", "application/json")
 	json.NewEncoder(w).Encode(user)
-}
-
-func verify(w http.ResponseWriter, r *http.Request) {
-	w.Header().Set("Content-Type", "application/json")
-	fmt.Println(r);
-	response := map[string]int{"result": 255}
-
-	json.NewEncoder(w).Encode(response)
 }
